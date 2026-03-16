@@ -7,7 +7,7 @@ const FEATURES = [
   {
     icon: <Zap size={24} className="text-yellow-400" />,
     title: "Automated OpenCore",
-    desc: "OneClick detects your hardware and generates optimized OpenCore setups automatically.",
+    desc: "Frontier detects your hardware and generates optimized OpenCore setups automatically.",
     color: "rgba(250, 204, 21, 0.1)"
   },
   {

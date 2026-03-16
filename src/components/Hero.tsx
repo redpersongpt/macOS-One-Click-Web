@@ -21,7 +21,7 @@ export default function Hero() {
           </div>
 
           <h1 className="text-6xl sm:text-8xl font-black leading-[0.9] tracking-tighter text-glow">
-            macOS <br /> OneClick
+            macOS <br /> Frontier
           </h1>
 
           <p className="text-xl sm:text-2xl text-white/50 font-medium leading-relaxed max-w-md">
@@ -32,15 +32,15 @@ export default function Hero() {
             <motion.button
               whileHover={{ scale: 1.02, boxShadow: "0 0 30px rgba(59, 130, 246, 0.4)" }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => window.open('https://github.com/AtaTuncBilge/macOS-One-Click/releases/tag/v1.2.0', '_blank')}
+              onClick={() => window.open('https://github.com/AtaTuncBilge/macOS-One-Click/releases', '_blank')}
               className="bg-white text-black px-8 py-4 rounded-xl font-black text-lg flex items-center gap-2 shadow-2xl transition-shadow"
             >
-              <Download size={20} /> Download OneClick
+              <Download size={20} /> Download Frontier
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.1)" }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => window.location.href = '/docs'}
+              onClick={() => window.open('https://docs.redcore-ocr.cloud', '_blank')}
               className="glass px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2"
             >
               <BookOpen size={20} /> View Documentation

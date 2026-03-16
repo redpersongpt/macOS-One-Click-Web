@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "macOS OneClick | Professional Deployment Tool",
+  title: "macOS Frontier | Professional Deployment Tool",
   description: "The professional choice for macOS deployment. Engineered for experts, refined by the community.",
 };
 

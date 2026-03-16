@@ -21,10 +21,11 @@ export default function Home() {
         {/* Navigation spacer */}
         <nav className="fixed top-0 left-0 right-0 z-50 p-6">
           <div className="container mx-auto flex justify-between items-center glass px-6 py-4 rounded-2xl">
-             <div className="font-black tracking-tighter text-xl">OneClick</div>
+             <div className="font-black tracking-tighter text-xl">macOS Frontier</div>
               <div className="flex gap-8 text-sm font-bold text-white/50">
+                <a href="#" className="hover:text-white transition-colors">Platform</a>
+                <a href="https://docs.redcore-ocr.cloud" className="hover:text-white transition-colors">Docs</a>
                 <a href="https://github.com/AtaTuncBilge/macOS-One-Click" className="hover:text-white transition-colors">GitHub</a>
-                <a href="/about" className="hover:text-white transition-colors">About Me</a>
               </div>
           </div>
         </nav>
@@ -37,7 +38,7 @@ export default function Home() {
           <div className="glass p-12 rounded-[3rem] border-primary/5 bg-gradient-to-b from-primary/5 to-transparent">
             <h2 className="text-4xl sm:text-5xl font-black mb-6 leading-tight">Built for reliable <br/> hardware exploration.</h2>
             <p className="text-white/40 max-w-2xl mx-auto text-lg mb-0">
-              OneClick was built to make macOS deployment accessible and reliable. Join the most advanced deployment ecosystem.
+              Frontier was built to make macOS deployment accessible and reliable. Join the most advanced deployment ecosystem.
             </p>
           </div>
         </section>
