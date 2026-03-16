@@ -1,6 +1,12 @@
-# React + TypeScript + Vite
+# macOS OneClick | Primary Application Repository
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the core engine and implementation for the macOS OneClick deployment tool. 
+
+**Official Landing Page**: [macOS-One-Click-Web](https://github.com/AtaTuncBilge/macOS-One-Click-Web)
+**Live Site**: [macos-install.one](https://macos-install.one)
+
+---
+
 
 Currently, two official plugins are available:
 
