@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "build:cf": "opennextjs-cloudflare build",
-    "deploy": "opennextjs-cloudflare deploy"
+    "deploy": "npm run build:cf && opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.2.1",
