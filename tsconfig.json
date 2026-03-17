@@ -17,6 +17,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "baseUrl": ".",
     "plugins": [
       {
         "name": "next"
@@ -38,6 +39,5 @@
   "exclude": [
     "node_modules",
     "legacy"
-
   ]
 }
