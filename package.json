@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:cf": "opennextjs-cloudflare build",
+    "deploy": "opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.2.1",
@@ -19,6 +21,7 @@
     "tailwind-merge": "latest"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.17.1",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
@@ -27,6 +30,7 @@
     "eslint-config-next": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
-    "typescript": "latest"
+    "typescript": "latest",
+    "wrangler": "^4.74.0"
   }
 }
