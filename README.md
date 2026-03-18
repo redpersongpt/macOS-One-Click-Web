@@ -2,15 +2,15 @@
 
 <div align="center">
 
-<img src="https://github.com/AtaTuncBilge/macOS-One-Click-Web/blob/main/legacy/src/assets/hero.png?raw=true" alt="macOS One-Click — Frontier Edition" width="100%">
+<img src="https://github.com/redpersongpt/macOS-One-Click-Web/blob/main/legacy/src/assets/hero.png?raw=true" alt="macOS One-Click — Frontier Edition" width="100%">
 
 <br/>
 
 [![Follow on X](https://img.shields.io/badge/Follow-%40redpersongpt-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/redpersongpt)
-[![GitHub Stars](https://img.shields.io/github/stars/AtaTuncBilge/macOS-One-Click?style=for-the-badge&logo=github&color=gold)](https://github.com/AtaTuncBilge/macOS-One-Click/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/AtaTuncBilge/macOS-One-Click?style=for-the-badge&logo=github&color=blue)](https://github.com/AtaTuncBilge/macOS-One-Click/network/members)
-[![Commits](https://img.shields.io/github/commit-activity/m/AtaTuncBilge/macOS-One-Click?style=for-the-badge&logo=git&logoColor=white&label=commits)](https://github.com/AtaTuncBilge/macOS-One-Click/pulse)
-[![License](https://img.shields.io/github/license/AtaTuncBilge/macOS-One-Click?style=for-the-badge&logo=apache&color=brightgreen)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/redpersongpt/macOS-One-Click?style=for-the-badge&logo=github&color=gold)](https://github.com/redpersongpt/macOS-One-Click/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/redpersongpt/macOS-One-Click?style=for-the-badge&logo=github&color=blue)](https://github.com/redpersongpt/macOS-One-Click/network/members)
+[![Commits](https://img.shields.io/github/commit-activity/m/redpersongpt/macOS-One-Click?style=for-the-badge&logo=git&logoColor=white&label=commits)](https://github.com/redpersongpt/macOS-One-Click/pulse)
+[![License](https://img.shields.io/github/license/redpersongpt/macOS-One-Click?style=for-the-badge&logo=apache&color=brightgreen)](LICENSE)
 
 ![Electron](https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -49,6 +49,6 @@ Built according to OpenCore standards:
 
 <div align="center">
 
-**Developed by [AtaTuncBilge](https://github.com/AtaTuncBilge)**  &nbsp;·&nbsp;  [Follow on X](https://x.com/redpersongpt)
+**Developed by [redpersongpt](https://github.com/redpersongpt)**  &nbsp;·&nbsp;  [Follow on X](https://x.com/redpersongpt)
 
 </div>

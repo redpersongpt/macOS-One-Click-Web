@@ -22,7 +22,7 @@ export default function AboutPage() {
              <div className="font-black tracking-tighter text-xl">macOS OneClick</div>
               <div className="flex gap-8 text-sm font-bold text-white/50">
                 <a href="/" className="hover:text-white transition-colors">Home</a>
-                <a href="https://github.com/AtaTuncBilge/macOS-One-Click" className="hover:text-white transition-colors">GitHub</a>
+                <a href="https://github.com/redpersongpt/macOS-One-Click" className="hover:text-white transition-colors">GitHub</a>
               </div>
           </div>
         </nav>

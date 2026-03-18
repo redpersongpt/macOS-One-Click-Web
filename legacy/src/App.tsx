@@ -98,7 +98,7 @@ export default function App() {
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', width: '100%' }}>
               <button 
-                onClick={() => window.open('https://github.com/AtaTuncBilge/macOS-One-Click/releases', '_blank')}
+                onClick={() => window.open('https://github.com/redpersongpt/macOS-One-Click/releases', '_blank')}
                 style={{
                   padding: '2rem',
                   backgroundColor: 'white',
@@ -146,7 +146,7 @@ export default function App() {
               </button>
 
               <button 
-                onClick={() => window.open('https://github.com/AtaTuncBilge/macOS-One-Click', '_blank')}
+                onClick={() => window.open('https://github.com/redpersongpt/macOS-One-Click', '_blank')}
                 style={{
                   padding: '2rem',
                   backgroundColor: 'rgba(255, 255, 255, 0.05)',

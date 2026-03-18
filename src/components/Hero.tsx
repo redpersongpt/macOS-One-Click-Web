@@ -32,7 +32,7 @@ export default function Hero() {
             <motion.button
               whileHover={{ scale: 1.02, boxShadow: "0 0 30px rgba(59, 130, 246, 0.4)" }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => window.open('https://github.com/AtaTuncBilge/macOS-One-Click/releases', '_blank')}
+              onClick={() => window.open('https://github.com/redpersongpt/macOS-One-Click/releases', '_blank')}
               className="bg-white text-black px-8 py-4 rounded-xl font-black text-lg flex items-center gap-2 shadow-2xl transition-shadow"
             >
               <Download size={20} /> Download OneClick

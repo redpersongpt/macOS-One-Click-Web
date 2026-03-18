@@ -13,7 +13,7 @@ export default function Footer() {
           {["Platform", "GitHub", "About Me", "Legal"].map((link) => (
             <a 
               key={link} 
-              href={link === "About Me" ? "/about" : link === "GitHub" ? "https://github.com/AtaTuncBilge/macOS-One-Click" : "#"} 
+              href={link === "About Me" ? "/about" : link === "GitHub" ? "https://github.com/redpersongpt/macOS-One-Click" : "#"} 
               className="text-white/30 hover:text-white font-bold text-sm transition-colors uppercase tracking-widest leading-none flex items-center gap-2"
             >
               <span className="w-1 h-1 rounded-full bg-white/10" />
