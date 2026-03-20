@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { BadgeCheck, CircleAlert, FileCode2 } from "lucide-react";
 import BrandIcon from "./BrandIcon";
 
 const scanResults = [
@@ -12,17 +13,15 @@ const scanResults = [
 
 export default function ProductProof() {
   return (
-    <section id="proof" className="relative py-24 sm:py-28">
+    <section id="proof" className="relative py-16 sm:py-20">
       <div className="container mx-auto max-w-6xl px-6">
-        <div className="mb-12 max-w-2xl">
+        <div className="mb-8 max-w-2xl">
           <p className="eyebrow">Example report</p>
-          <h2 className="balance-text mt-5 text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-            Show the decision trail, not a fake live machine.
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            What shows up before write.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-white/72 sm:text-lg">
-            This panel is explicitly illustrative. The point is the shape of
-            the report: detection, confidence, blockers, and the final EFI
-            summary before any write step happens.
+          <p className="mt-3 text-sm leading-relaxed text-white/64 sm:text-base">
+            Sample report. Real structure. No fake live hardware flex.
           </p>
         </div>
 
@@ -105,37 +104,43 @@ export default function ProductProof() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h3 className="balance-text text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              The useful part is the report shape: what was seen, what it
-              means, and where the risk lives.
-            </h3>
-            <div className="mt-6 space-y-5 text-base leading-relaxed text-white/72">
-              <p>
-                OneClick should show the operator a legible path from hardware
-                detection to EFI export. That means explicit notes, validation
-                gates, and visible assumptions instead of ambiguous success
-                messaging.
-              </p>
-              <p>
-                Versioned details are presented as examples, not as a fake
-                promise that every system receives the same result. The report
-                exists to support judgment, not replace it.
-              </p>
-            </div>
-
-            <div className="mt-8 grid gap-4">
+            <div className="grid gap-4">
               {[
-                "Blockers are surfaced before export.",
-                "Confidence is tied to the detected path, not marketing copy.",
-                "Nothing writes until the review state is clear.",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-[1.3rem] border border-white/10 bg-white/[0.04] px-5 py-4 text-sm text-white/72"
-                >
-                  {item}
-                </div>
-              ))}
+                {
+                  icon: BadgeCheck,
+                  title: "Confidence",
+                  text: "You get a verdict, not vague hype.",
+                },
+                {
+                  icon: CircleAlert,
+                  title: "Blockers",
+                  text: "If the path is bad, it should say so fast.",
+                },
+                {
+                  icon: FileCode2,
+                  title: "Notes",
+                  text: "Kexts, patches, and boot args stay visible.",
+                },
+              ].map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <div
+                    key={item.title}
+                    className="surface-panel rounded-[1.4rem] p-5"
+                  >
+                    <div className="flex items-center gap-3">
+                      <Icon size={18} className="text-[var(--accent)]" />
+                      <h3 className="text-base font-semibold text-white">
+                        {item.title}
+                      </h3>
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-white/66">
+                      {item.text}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
         </div>

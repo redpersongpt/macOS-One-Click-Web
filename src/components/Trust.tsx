@@ -1,30 +1,30 @@
 "use client";
 
 import Link from "next/link";
+import { Ban, FileSearch, ShieldAlert } from "lucide-react";
 import { motion } from "framer-motion";
 
-const accepted = [
-  "Systems with a plausible OpenCore path and enough signal to reason about.",
-  "Operators who want notes, validation, and a report before export.",
-  "Hardware checks that can be mapped to explicit configuration choices.",
-];
-
-const blocked = [
-  "Known incompatibilities that would turn the build into guesswork.",
-  "Configs that need unsupported assumptions or blind patching.",
-  "Any write flow that tries to skip the review and validation gates.",
-];
-
-const checklist = [
-  "Hardware profile generated",
-  "Risk flags reviewed",
-  "EFI notes exported",
-  "Write step manually confirmed",
+const guardrails = [
+  {
+    icon: FileSearch,
+    title: "Explain",
+    text: "Every path should stay readable.",
+  },
+  {
+    icon: ShieldAlert,
+    title: "Flag",
+    text: "Risk shows up before write.",
+  },
+  {
+    icon: Ban,
+    title: "Block",
+    text: "Bad configs stop cold.",
+  },
 ];
 
 export default function Trust() {
   return (
-    <section id="safety" className="relative py-24 sm:py-28">
+    <section id="safety" className="relative py-16 sm:py-20">
       <div className="container mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -33,91 +33,46 @@ export default function Trust() {
           transition={{ duration: 0.5 }}
         >
           <p className="eyebrow">Safety gates</p>
-          <h2 className="balance-text mt-5 text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-            The right product promise is restraint.
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            No soft promises.
           </h2>
-          <p className="mb-14 mt-4 max-w-2xl text-base leading-relaxed text-white/72 sm:text-lg">
-            Hackintosh tooling becomes dangerous when it hides uncertainty.
-            OneClick should be strict about what it accepts, explicit about
-            what it flags, and comfortable saying no.
+          <p className="mb-8 mt-3 max-w-xl text-sm leading-relaxed text-white/64 sm:text-base">
+            If the setup is shaky, the tool should feel sharp enough to say no.
           </p>
         </motion.div>
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(260px,0.8fr)]">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: 0.08 }}
-            className="surface-panel rounded-[1.8rem] p-8 sm:p-9"
-          >
-            <h3 className="font-mono text-[0.72rem] uppercase tracking-[0.22em] text-emerald-300">
-              Accepts
-            </h3>
-            <ul className="mt-6 space-y-4">
-              {accepted.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-sm leading-relaxed text-white/72"
-                >
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-emerald-400/70" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+        <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto] md:items-stretch">
+          {guardrails.map((item, index) => {
+            const Icon = item.icon;
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: 0.16 }}
-            className="surface-panel rounded-[1.8rem] p-8 sm:p-9"
-          >
-            <h3 className="font-mono text-[0.72rem] uppercase tracking-[0.22em] text-rose-300">
-              Blocks
-            </h3>
-            <ul className="mt-6 space-y-4">
-              {blocked.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-sm leading-relaxed text-white/72"
-                >
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-rose-400/70" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.45, delay: index * 0.08 }}
+                className="surface-panel rounded-[1.5rem] p-5"
+              >
+                <Icon size={20} className="text-[var(--accent)]" />
+                <h3 className="mt-4 text-xl font-semibold text-white">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/66">
+                  {item.text}
+                </p>
+              </motion.div>
+            );
+          })}
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: 0.24 }}
-            className="section-band rounded-[1.8rem] border border-white/10 p-8"
-          >
-            <p className="font-mono text-[0.72rem] uppercase tracking-[0.22em] text-[var(--accent)]">
-              Before write
-            </p>
-            <ul className="mt-6 space-y-3">
-              {checklist.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-center gap-3 rounded-full border border-white/10 bg-black/18 px-4 py-3 text-sm text-white/72"
-                >
-                  <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+          <div className="flex items-center md:justify-end">
             <Link
               href="/docs"
-              className="focus-ring mt-8 inline-flex rounded-full border border-white/12 bg-white/[0.04] px-5 py-3 text-sm font-medium text-white/88 hover:bg-white/[0.08]"
+              className="focus-ring inline-flex rounded-full border border-white/12 bg-white/[0.04] px-5 py-3 text-sm font-medium text-white/88 hover:bg-white/[0.08]"
             >
-              Review the docs checklist
+              Read docs
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

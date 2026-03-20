@@ -9,14 +9,11 @@ export default function Footer() {
           <p className="eyebrow">Final checkpoint</p>
           <div className="mt-4 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
-              <h2 className="balance-text text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Start with the docs, then pull the latest build when your
-                hardware path looks real.
+              <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                Read the docs. Pull the build. Stop if the path looks wrong.
               </h2>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">
-                The site is structured to help you decide whether a build
-                should happen at all. Read the setup notes, check the blockers,
-                then move to the release that matches your use case.
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/64 sm:text-base">
+                That is the whole attitude.
               </p>
             </div>
 

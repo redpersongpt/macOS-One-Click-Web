@@ -7,7 +7,7 @@ import SiteHeader from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "Docs",
   description:
-    "Read the setup notes, compatibility guidance, and troubleshooting reference for macOS OneClick.",
+    "Read the setup notes and compatibility boundaries for macOS OneClick.",
   alternates: {
     canonical: "/docs",
   },
@@ -25,24 +25,6 @@ const supportNotes = [
   "If your hardware is incomplete or unusually configured, treat the generated output as a starting point, not a guarantee.",
 ];
 
-const troubleshootingData = [
-  {
-    category: "Boot stage",
-    error: "Stuck at Apple logo",
-    fix: 'Check CFG-Lock handling in BIOS and confirm the relevant OpenCore settings are enabled for your platform.',
-  },
-  {
-    category: "Boot stage",
-    error: "EB|#LOG:EXITBS:START",
-    fix: 'Review memory map and virtualisation-related quirks such as DevirtualiseMmio or SetupVirtualMap for the target board.',
-  },
-  {
-    category: "Kernel stage",
-    error: "Kernel panic on power management",
-    fix: "Verify CPU power-management patches and confirm the required kexts are present in the EFI build.",
-  },
-];
-
 export default function DocsPage() {
   return (
     <>
@@ -58,13 +40,10 @@ export default function DocsPage() {
               Documentation
             </p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-              Setup guidance, compatibility notes, and a narrow troubleshooting
-              reference.
+              Setup notes and hard boundaries.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/72">
-              The notes below are intentionally scoped. They describe the
-              assumptions the project makes, the limits of those assumptions,
-              and the most common failure points users should check first.
+              Keep it narrow. Know what the tool expects. Know when to stop.
             </p>
 
             <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -122,39 +101,7 @@ export default function DocsPage() {
               </section>
             </div>
 
-            <section className="mt-6 rounded-[1.8rem] border border-amber-400/15 bg-amber-400/8 p-7 sm:p-8">
-              <h2 className="text-sm font-mono uppercase tracking-[0.24em] text-amber-100/70">
-                Troubleshooting
-              </h2>
-              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-amber-50/78">
-                Use these notes as first-pass checks. They are not universal
-                fixes, and the exact settings still depend on the board, CPU,
-                GPU, and firmware you are working with.
-              </p>
-
-              <div className="mt-6 grid gap-4">
-                {troubleshootingData.map((item) => (
-                  <article
-                    key={item.error}
-                    className="rounded-2xl border border-white/8 bg-[#050505]/60 p-5"
-                  >
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span className="rounded-full border border-white/10 px-3 py-1 text-[10px] font-mono uppercase tracking-[0.22em] text-white/45">
-                        {item.category}
-                      </span>
-                      <h3 className="text-base font-semibold text-white">
-                        {item.error}
-                      </h3>
-                    </div>
-                    <p className="mt-3 text-sm leading-relaxed text-white/72">
-                      {item.fix}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section className="surface-panel rounded-[1.8rem] p-7 sm:p-8">
+            <section className="mt-6 surface-panel rounded-[1.8rem] p-7 sm:p-8">
               <h2 className="text-sm font-mono uppercase tracking-[0.24em] text-white/52">
                 Next step
               </h2>
