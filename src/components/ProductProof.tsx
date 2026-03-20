@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import BrandIcon from "./BrandIcon";
 
 const scanResults = [
   { label: "CPU", value: "Intel Core i5-9400F" },
@@ -30,7 +31,8 @@ export default function ProductProof() {
                   <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
                   <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
                 </div>
-                <span className="text-[11px] text-white/20 ml-2">
+                <BrandIcon className="w-3 h-3 text-white/20 ml-2" />
+                <span className="text-[11px] text-white/20">
                   OneClick — System Report
                 </span>
               </div>
@@ -63,7 +65,11 @@ export default function ProductProof() {
                   </span>
                 </div>
                 <div className="text-white/30 text-xs space-y-0.5">
-                  <div>Target: macOS Sonoma 14.4</div>
+                  <div className="flex items-center gap-1">
+                    <span>Target:</span>
+                    <BrandIcon className="w-2.5 h-2.5 text-white/30" />
+                    <span>macOS Sonoma 14.4</span>
+                  </div>
                   <div>SMBIOS: iMac19,1</div>
                 </div>
               </div>

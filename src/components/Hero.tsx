@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
+import BrandIcon from "./BrandIcon";
 
 const systemSegments = [
   { label: "Coffee Lake i5-9400F", delay: 0.4 },
   { label: "UHD 630", delay: 0.6 },
-  { label: "Sonoma 14.4", delay: 0.8 },
+  { label: "Sonoma 14.4", delay: 0.8, apple: true },
   { label: "High confidence", delay: 1.0, accent: true },
 ];
 
@@ -55,11 +56,14 @@ export default function Hero() {
                 className={
                   seg.accent
                     ? "flex items-center gap-2 text-green-400"
-                    : "text-white/50"
+                    : "flex items-center gap-1.5 text-white/50"
                 }
               >
                 {seg.accent && (
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-glow-pulse" />
+                )}
+                {seg.apple && (
+                  <BrandIcon className="w-3 h-3 text-white/40" />
                 )}
                 {seg.label}
               </motion.span>

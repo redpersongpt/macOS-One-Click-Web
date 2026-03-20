@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import BrandIcon from "@/components/BrandIcon";
 import Footer from "@/components/Footer";
 
 const troubleshootingData = [
@@ -37,8 +38,9 @@ export default function DocsPage() {
         <div className="container mx-auto px-6 py-5 flex justify-between items-center">
           <Link
             href="/"
-            className="font-semibold text-sm tracking-tight text-white/70 hover:text-white transition-colors"
+            className="flex items-center gap-2 font-semibold text-sm tracking-tight text-white/70 hover:text-white transition-colors"
           >
+            <BrandIcon className="w-4 h-4" />
             macOS OneClick
           </Link>
           <div className="flex items-center gap-6 text-sm text-white/30">
