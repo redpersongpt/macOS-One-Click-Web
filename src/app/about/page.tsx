@@ -1,114 +1,127 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Youtube } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
-import BrandIcon from "@/components/BrandIcon";
+import { Youtube } from "lucide-react";
 import Footer from "@/components/Footer";
+import PageBackdrop from "@/components/PageBackdrop";
+import SiteHeader from "@/components/SiteHeader";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn who built macOS OneClick, why it exists, and the design principles behind the project.",
+  alternates: {
+    canonical: "/about",
+  },
+};
+
+const principles = [
+  {
+    title: "Build for clarity",
+    body: "The project should explain what it is doing before it touches a disk. Clear output matters more than theatrical automation.",
+  },
+  {
+    title: "Prefer constraints over guesses",
+    body: "If hardware or configuration data is incomplete, the tool should make that explicit instead of pretending the setup is safe.",
+  },
+  {
+    title: "Keep the path short",
+    body: "OneClick is meant to reduce the number of manual steps between hardware detection, validation, and a working OpenCore build.",
+  },
+];
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#050505]">
-      {/* Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[#050505]" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px]" />
-        <div className="absolute inset-0 bg-noise opacity-[0.02]" />
-      </div>
-
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#050505] via-[#050505]/80 to-transparent">
-        <div className="container mx-auto px-6 py-5 flex justify-between items-center">
-          <Link
-            href="/"
-            className="flex items-center gap-2 font-semibold text-sm tracking-tight text-white/70 hover:text-white transition-colors"
-          >
-            <BrandIcon className="w-4 h-4" />
-            macOS OneClick
-          </Link>
-          <div className="flex items-center gap-6 text-sm text-white/30">
-            <a
-              href="https://github.com/redpersongpt/macOS-One-Click"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white/60 transition-colors"
-            >
-              GitHub
-            </a>
-            <Link
-              href="/docs"
-              className="hover:text-white/60 transition-colors"
-            >
-              Docs
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      <div className="relative z-10">
-        <section className="pt-36 pb-20 container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl mx-auto"
-          >
-            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight mb-2">
-              About
+    <>
+      <a href="#content" className="skip-link">
+        Skip to content
+      </a>
+      <PageBackdrop />
+      <SiteHeader currentPath="/about" />
+      <main id="content" className="relative min-h-screen text-white">
+        <section className="container mx-auto max-w-6xl px-6 pb-20 pt-20 sm:pt-24">
+          <div className="mx-auto max-w-4xl">
+            <p className="eyebrow">
+              About the project
+            </p>
+            <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+              A small team focus: make a difficult workflow legible, safer, and
+              faster.
             </h1>
-            <p className="text-white/30 text-sm font-mono uppercase tracking-widest mb-12">
-              By Red Person
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/72">
+              macOS OneClick exists to turn hardware detection and OpenCore
+              setup into a guided process. The goal is not to hide complexity.
+              The goal is to surface the important decisions before anything is
+              written.
             </p>
 
-            <div className="space-y-8 text-white/45 text-base leading-relaxed">
-              <p className="text-white/60 text-lg">
-                I&apos;m a system trainee working in IT. I don&apos;t claim to
-                be a senior architect or a tech mogul. I&apos;m just someone who
-                found themselves fascinated by the bridge between hardware and
-                software.
-              </p>
-
-              <div>
-                <h3 className="text-white/80 font-medium text-lg mb-3">
-                  Who built OneClick
-                </h3>
-                <p>
-                  I am the developer behind macOS OneClick. My focus is on
-                  creating tools that bridge the gap between complex system
-                  configurations and user accessibility.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-white/80 font-medium text-lg mb-3">
-                  Why the project exists
-                </h3>
-                <p>
-                  This project started as a personal challenge to automate what
-                  was once a grueling manual process. It grew into a community
-                  tool designed to empower users with the same curiosity — to
-                  help them understand their hardware and deploy macOS with
-                  confidence.
-                </p>
-              </div>
-
-              <div className="pt-4">
-                <a
-                  href="https://www.youtube.com/@redpersonn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg bg-white/[0.04] border border-white/[0.06] text-white/50 text-sm font-medium hover:bg-white/[0.08] hover:text-white/70 transition-colors"
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {principles.map((item) => (
+                <article
+                  key={item.title}
+                  className="surface-panel rounded-[1.6rem] p-6"
                 >
-                  <Youtube size={18} />
-                  YouTube Channel
-                </a>
-              </div>
+                  <h2 className="text-base font-semibold tracking-tight text-white">
+                    {item.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-white/66">
+                    {item.body}
+                  </p>
+                </article>
+              ))}
             </div>
-          </motion.div>
+
+            <div className="mt-10 grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
+              <section className="surface-panel rounded-[1.8rem] p-7 sm:p-8">
+                <h2 className="text-sm font-mono uppercase tracking-[0.24em] text-white/52">
+                  Who built it
+                </h2>
+                <div className="mt-4 space-y-5 text-base leading-relaxed text-white/72">
+                  <p>
+                    I&apos;m the developer behind macOS OneClick. The project
+                    came from working through a process that was too manual,
+                    too easy to misconfigure, and too opaque for a lot of users.
+                  </p>
+                  <p>
+                    The main constraint I keep in mind is trust. If a setup is
+                    not compatible, the interface should say that plainly. If a
+                    step is risky, the user should see it before they commit to
+                    it.
+                  </p>
+                </div>
+              </section>
+
+              <aside className="section-band rounded-[1.8rem] border border-white/10 p-7 sm:p-8">
+                <h2 className="text-sm font-mono uppercase tracking-[0.24em] text-white/52">
+                  Where to follow
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-white/68">
+                  I keep the project updates and related content on the links
+                  below.
+                </p>
+                <div className="mt-6 space-y-3">
+                  <a
+                    href="https://www.youtube.com/@redpersonn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="focus-ring inline-flex w-full items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white/82 hover:border-white/20 hover:bg-white/8 hover:text-white"
+                  >
+                    <Youtube size={18} />
+                    YouTube Channel
+                  </a>
+                  <Link
+                    href="/docs"
+                    className="focus-ring inline-flex w-full items-center justify-center rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-white/75 hover:border-white/20 hover:bg-white/5 hover:text-white"
+                  >
+                    Read the docs
+                  </Link>
+                </div>
+              </aside>
+            </div>
+          </div>
         </section>
 
         <Footer />
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

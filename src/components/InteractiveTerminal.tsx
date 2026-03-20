@@ -1,0 +1,218 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { RotateCcw } from "lucide-react";
+
+type LineType = "command" | "output" | "verdict" | "blank";
+
+interface Line {
+  id: number;
+  type: LineType;
+  text: string;
+}
+
+const STEPS: { type: LineType; text: string }[] = [
+  { type: "command", text: "inspect --report" },
+  { type: "output", text: "[✔] Reading CPU, GPU, storage, audio, and network" },
+  { type: "output", text: "[✔] Checking compatibility signals and blockers" },
+  { type: "output", text: "[✔] Mapping the OpenCore path for review" },
+  { type: "blank", text: "" },
+  { type: "command", text: "build --plan" },
+  { type: "output", text: "[✔] Selecting the right configuration family" },
+  { type: "output", text: "[✔] Annotating kexts, patches, and quirks" },
+  { type: "output", text: "[✔] Preparing export notes before write" },
+  { type: "blank", text: "" },
+  { type: "command", text: "validate" },
+  { type: "output", text: "[✔] Checking required boot assets" },
+  { type: "output", text: "[✔] Running consistency and conflict checks" },
+  { type: "blank", text: "" },
+  { type: "command", text: "verdict" },
+  { type: "verdict", text: "Supported path surfaced · Review before write" },
+];
+
+export default function InteractiveTerminal() {
+  const [lines, setLines] = useState<Line[]>([]);
+  const [typing, setTyping] = useState<string | null>(null);
+  const [done, setDone] = useState(false);
+  const [cursor, setCursor] = useState(true);
+  const [runKey, setRunKey] = useState(0);
+  const runIdRef = useRef(0);
+  const lineIdRef = useRef(0);
+  const bodyRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const id = ++runIdRef.current;
+    lineIdRef.current = 0;
+    setLines([]);
+    setTyping(null);
+    setDone(false);
+
+    const cancelled = () => runIdRef.current !== id;
+
+    const sleep = (ms: number) =>
+      new Promise<void>((resolve, reject) => {
+        setTimeout(() => (cancelled() ? reject(new Error("cancel")) : resolve()), ms);
+      });
+
+    const scroll = () => {
+      requestAnimationFrame(() => {
+        bodyRef.current?.scrollTo({ top: bodyRef.current.scrollHeight });
+      });
+    };
+
+    const run = async () => {
+      try {
+        await sleep(700);
+
+        for (const step of STEPS) {
+          if (step.type === "blank") {
+            setLines((prev) => [
+              ...prev,
+              { id: lineIdRef.current++, type: "blank", text: "" },
+            ]);
+            scroll();
+            await sleep(120);
+            continue;
+          }
+
+          if (step.type === "command") {
+            for (let i = 0; i <= step.text.length; i += 1) {
+              if (cancelled()) {
+                return;
+              }
+
+              setTyping(step.text.slice(0, i));
+              await sleep(28 + Math.random() * 28);
+            }
+
+            setTyping(null);
+            setLines((prev) => [
+              ...prev,
+              { id: lineIdRef.current++, type: "command", text: step.text },
+            ]);
+            scroll();
+            await sleep(300);
+          } else {
+            setLines((prev) => [
+              ...prev,
+              { id: lineIdRef.current++, type: step.type, text: step.text },
+            ]);
+            scroll();
+            await sleep(step.type === "verdict" ? 250 : 160 + Math.random() * 90);
+          }
+        }
+
+        setDone(true);
+      } catch {
+        /* cancelled */
+      }
+    };
+
+    run();
+    return () => {
+      runIdRef.current += 1;
+    };
+  }, [runKey]);
+
+  useEffect(() => {
+    const timer = setInterval(() => setCursor((prev) => !prev), 530);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative group">
+      <div className="overflow-hidden rounded-[1.6rem] border border-white/[0.08] bg-[#0a1016]/82 shadow-2xl shadow-black/40 backdrop-blur-xl">
+        <div className="flex items-center border-b border-white/[0.06] px-4 py-2.5">
+          <div className="flex gap-[7px]">
+            <div className="h-[11px] w-[11px] rounded-full bg-[#ff5f57]/80 transition-colors duration-300 group-hover:bg-[#ff5f57]" />
+            <div className="h-[11px] w-[11px] rounded-full bg-[#febc2e]/80 transition-colors duration-300 group-hover:bg-[#febc2e]" />
+            <div className="h-[11px] w-[11px] rounded-full bg-[#28c840]/80 transition-colors duration-300 group-hover:bg-[#28c840]" />
+          </div>
+          <span className="flex-1 select-none text-center font-mono text-[11px] uppercase tracking-[0.22em] text-white/22">
+            oneclick flow
+          </span>
+          {done && (
+            <motion.button
+              aria-label="Replay terminal preview"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              onClick={() => setRunKey((key) => key + 1)}
+              className="rounded p-1 text-white/20 transition-colors hover:bg-white/[0.06] hover:text-white/50"
+            >
+              <RotateCcw size={11} />
+            </motion.button>
+          )}
+        </div>
+
+        <div
+          ref={bodyRef}
+          className="scrollbar-hide min-h-[300px] max-h-[380px] overflow-y-auto p-4 font-mono text-[11.5px] leading-[1.75] sm:min-h-[340px] sm:p-5 sm:text-[13px]"
+        >
+          {lines.map((line) => {
+            if (line.type === "blank") {
+              return <div key={line.id} className="h-2.5" />;
+            }
+
+            return (
+              <div
+                key={line.id}
+                className={`-mx-1.5 rounded px-1.5 transition-colors duration-150 hover:bg-white/[0.025] ${
+                  line.type === "verdict" ? "mt-0.5" : ""
+                }`}
+              >
+                {line.type === "command" && (
+                  <>
+                    <span className="select-none text-[var(--accent)]/75">❯ </span>
+                    <span className="text-white/82">{line.text}</span>
+                  </>
+                )}
+                {line.type === "output" && (
+                  <>
+                    <span className="select-none text-emerald-300/75">[✔]</span>
+                    <span className="text-white/62">{line.text.slice(3)}</span>
+                  </>
+                )}
+                {line.type === "verdict" && (
+                  <span className="font-medium text-emerald-300">
+                    {line.text}
+                  </span>
+                )}
+              </div>
+            );
+          })}
+
+          {!done && (
+            <div>
+              <span className="select-none text-[var(--accent)]/75">❯ </span>
+              {typing !== null && <span className="text-white/82">{typing}</span>}
+              <span
+                className={`ml-px inline-block h-[14px] w-[6.5px] align-middle transition-opacity duration-75 ${
+                  cursor ? "bg-white/60" : "bg-transparent"
+                }`}
+              />
+            </div>
+          )}
+
+          {done && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <span className="select-none text-[var(--accent)]/75">❯ </span>
+              <span
+                className={`ml-px inline-block h-[14px] w-[6.5px] align-middle transition-opacity duration-75 ${
+                  cursor ? "bg-white/60" : "bg-transparent"
+                }`}
+              />
+            </motion.div>
+          )}
+        </div>
+      </div>
+
+      <div className="pointer-events-none absolute -inset-6 -z-10 rounded-3xl bg-[var(--accent)]/[0.05] blur-2xl opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+    </div>
+  );
+}

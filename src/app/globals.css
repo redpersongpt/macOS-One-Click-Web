@@ -1,35 +1,189 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  --foreground: #e5e5e5;
+  --background: #05090d;
+  --background-deep: #071118;
+  --foreground: #f5f7fa;
+  --muted: #9faab4;
+  --line: rgba(255, 255, 255, 0.1);
+  --panel: rgba(8, 15, 20, 0.74);
+  --panel-strong: rgba(11, 19, 26, 0.9);
+  --accent: #77d5ff;
+  --accent-warm: #f1b46a;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100vh;
   color: var(--foreground);
-  background: var(--background);
+  background:
+    radial-gradient(circle at top, rgba(119, 213, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 86% 16%, rgba(241, 180, 106, 0.14), transparent 24%),
+    linear-gradient(180deg, var(--background) 0%, var(--background-deep) 50%, #040608 100%);
   overflow-x: hidden;
+  font-family: var(--font-sans), sans-serif;
+}
+
+a {
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(119, 213, 255, 0.9);
+  outline-offset: 3px;
 }
 
 ::selection {
-  background: rgba(59, 130, 246, 0.25);
+  background: rgba(119, 213, 255, 0.28);
+  color: var(--foreground);
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.06];
+    @apply border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl;
   }
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-160%);
+  border: 1px solid rgba(119, 213, 255, 0.45);
+  border-radius: 999px;
+  background: rgba(5, 9, 13, 0.96);
+  color: var(--foreground);
+  padding: 0.75rem 1rem;
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.focus-ring {
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.focus-ring:focus-visible {
+  box-shadow:
+    0 0 0 2px rgba(5, 9, 13, 0.95),
+    0 0 0 4px rgba(119, 213, 255, 0.42);
+}
+
+.backdrop-grid,
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.backdrop-grid {
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.78), transparent 92%);
+}
+
+.surface-panel {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 18px 80px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(20px);
+}
+
+.surface-panel-strong {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)),
+    var(--panel-strong);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 24px 90px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(22px);
+}
+
+.section-band {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
+    var(--panel);
+}
+
+.eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(119, 213, 255, 0.82);
+}
+
+.balance-text {
+  text-wrap: balance;
 }
 
 .bg-noise {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes glow-pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.42;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes ambient-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 18px, 0) scale(1.04);
+  }
 }
 
 .animate-glow-pulse {
   animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-ambient-drift {
+  animation: ambient-drift 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
