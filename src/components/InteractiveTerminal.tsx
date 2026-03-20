@@ -125,9 +125,9 @@ export default function InteractiveTerminal() {
       <div className="overflow-hidden rounded-[1.6rem] border border-white/[0.08] bg-[#050505]/92 shadow-2xl shadow-black/40 backdrop-blur-xl">
         <div className="flex items-center border-b border-white/[0.06] px-4 py-2.5">
           <div className="flex gap-[7px]">
-            <div className="h-[11px] w-[11px] rounded-full bg-white/20 transition-colors duration-300 group-hover:bg-white/30" />
-            <div className="h-[11px] w-[11px] rounded-full bg-white/20 transition-colors duration-300 group-hover:bg-white/30" />
-            <div className="h-[11px] w-[11px] rounded-full bg-white/20 transition-colors duration-300 group-hover:bg-white/30" />
+            <div className="h-[11px] w-[11px] rounded-full bg-[#ff5f57] transition-transform duration-300 group-hover:scale-105" />
+            <div className="h-[11px] w-[11px] rounded-full bg-[#febc2e] transition-transform duration-300 group-hover:scale-105" />
+            <div className="h-[11px] w-[11px] rounded-full bg-[#28c840] transition-transform duration-300 group-hover:scale-105" />
           </div>
           <span className="flex-1 select-none text-center font-mono text-[11px] uppercase tracking-[0.22em] text-white/22">
             oneclick flow

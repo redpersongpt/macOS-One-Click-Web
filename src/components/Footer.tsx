@@ -14,9 +14,6 @@ export default function Footer() {
             aria-label="Footer"
             className="flex flex-wrap items-center gap-4 text-sm text-white/60"
           >
-            <Link href="/" className="focus-ring rounded-full px-2 py-1 hover:text-white">
-              Overview
-            </Link>
             <Link
               href="/docs"
               className="focus-ring rounded-full px-2 py-1 hover:text-white"
