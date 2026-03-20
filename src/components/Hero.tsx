@@ -9,6 +9,7 @@ import {
   ScanSearch,
   ShieldCheck,
 } from "lucide-react";
+import BrandIcon from "./BrandIcon";
 import InteractiveTerminal from "./InteractiveTerminal";
 
 const proofPills = [
@@ -37,7 +38,9 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="balance-text max-w-3xl text-5xl font-semibold leading-[0.94] tracking-tight text-white sm:text-6xl lg:text-[5rem]"
           >
-            Build the right EFI.
+            macOS
+            <BrandIcon className="mx-3 inline h-[0.9em] w-[0.9em] align-[-0.08em] text-white" />
+            needs the right EFI.
           </motion.h1>
 
           <motion.p
