@@ -8,30 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: {
-          DEFAULT: "#000000",
-          lighter: "#0f172a",
-          deep: "#111827",
-        },
-        primary: {
-          DEFAULT: "#3b82f6",
-          glow: "rgba(59, 130, 246, 0.5)",
-        },
-      },
       fontFamily: {
-        sans: ["Inter", "var(--sf-pro)", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
-      },
-      animation: {
-        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "float": "float 6s ease-in-out infinite",
-      },
-      keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-20px)" },
-        },
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
     },
   },

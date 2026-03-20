@@ -1,58 +1,48 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Shield, Users } from "lucide-react";
 
 const FEATURES = [
   {
-    icon: <Zap size={24} className="text-yellow-400" />,
-    title: "Automated OpenCore",
-    desc: "OneClick detects your hardware and generates optimized OpenCore setups automatically.",
-    color: "rgba(250, 204, 21, 0.1)"
+    title: "Your hardware, actually understood.",
+    hook: "Full system scan. CPU, GPU, audio, network — identified and matched to the right kexts, patches, and SMBIOS profile.",
+    proof: "SMBIOS reasoning · Kext selection · Hardware fingerprint",
   },
   {
-    icon: <Shield size={24} className="text-blue-400" />,
-    title: "Expert-Grade Tools",
-    desc: "Built for developers who need full control of macOS environments with native precision.",
-    color: "rgba(59, 130, 246, 0.1)"
+    title: "Not just a build. A full explanation.",
+    hook: "Every config choice comes with context. Know why a kext was included, why a patch was applied, and what each ACPI entry does.",
+    proof: "Kext breakdown · ACPI rationale · Config annotations",
   },
   {
-    icon: <Users size={24} className="text-purple-400" />,
-    title: "Community Driven",
-    desc: "Constantly refined by Hackintosh and macOS power users for maximum compatibility.",
-    color: "rgba(168, 85, 247, 0.1)"
-  }
+    title: "Validation before damage.",
+    hook: "Your EFI is checked against known constraints before it's written. Incompatible setups are blocked, not hidden.",
+    proof: "Pre-write validation · Conflict detection · Compatibility gate",
+  },
 ];
 
 export default function Features() {
   return (
-    <section className="py-24 relative">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8">
+    <section className="py-32 relative">
+      <div className="container mx-auto px-6 max-w-5xl">
+        <div className="grid gap-6">
           {FEATURES.map((f, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="glass p-8 rounded-3xl relative overflow-hidden group border-white/5"
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ delay: i * 0.08, duration: 0.5 }}
+              className="p-8 sm:p-10 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.1] transition-colors"
             >
-              {/* Card Glow */}
-              <div 
-                className="absolute -inset-24 opacity-0 group-hover:opacity-100 blur-[60px] transition-opacity duration-500 pointer-events-none"
-                style={{ background: `radial-gradient(circle, ${f.color} 0%, transparent 70%)` }}
-              />
-              
-              <div className="relative z-10">
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-white/5 mb-6">
-                  {f.icon}
-                </div>
-                <h3 className="text-2xl font-black mb-4 tracking-tight">{f.title}</h3>
-                <p className="text-white/50 leading-relaxed font-medium">
-                  {f.desc}
-                </p>
-              </div>
+              <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-4">
+                {f.title}
+              </h3>
+              <p className="text-white/40 text-base sm:text-lg leading-relaxed max-w-2xl">
+                {f.hook}
+              </p>
+              <p className="mt-5 text-xs font-mono text-white/20 tracking-wide">
+                {f.proof}
+              </p>
             </motion.div>
           ))}
         </div>

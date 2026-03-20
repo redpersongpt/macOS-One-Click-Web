@@ -1,62 +1,107 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, BookOpen, Star, ArrowRight } from "lucide-react";
-import TerminalMock from "./TerminalMock";
+import { Download } from "lucide-react";
+
+const systemSegments = [
+  { label: "Coffee Lake i5-9400F", delay: 0.4 },
+  { label: "UHD 630", delay: 0.6 },
+  { label: "Sonoma 14.4", delay: 0.8 },
+  { label: "High confidence", delay: 1.0, accent: true },
+];
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        {/* Left Side */}
-        <motion.div
+    <section className="relative min-h-screen flex items-center justify-center pt-16">
+      <div className="container mx-auto px-6 max-w-4xl text-center">
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col gap-8"
+          transition={{ duration: 0.6 }}
+          className="text-5xl sm:text-7xl lg:text-[5.5rem] font-semibold tracking-tight leading-[0.95]"
         >
-          <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-xs font-bold text-white/50 uppercase tracking-widest whitespace-nowrap">v1.2.0 Stable now live</span>
-          </div>
+          The EFI your hardware
+          <br />
+          actually needs.
+        </motion.h1>
 
-          <h1 className="text-6xl sm:text-8xl font-black leading-[0.9] tracking-tighter text-glow">
-            macOS <br /> OneClick
-          </h1>
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.12 }}
+          className="mt-8 text-lg sm:text-xl text-white/45 max-w-2xl mx-auto leading-relaxed"
+        >
+          Scans your system. Builds a validated OpenCore config.
+          <br className="hidden sm:block" />
+          Explains every decision before anything touches your disk.
+        </motion.p>
 
-          <p className="text-xl sm:text-2xl text-white/50 font-medium leading-relaxed max-w-md">
-            The professional choice for macOS deployment. Engineered for experts, refined by the community.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <motion.button
-              whileHover={{ scale: 1.02, boxShadow: "0 0 30px rgba(59, 130, 246, 0.4)" }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => window.open('https://github.com/redpersongpt/macOS-One-Click/releases', '_blank')}
-              className="bg-white text-black px-8 py-4 rounded-xl font-black text-lg flex items-center gap-2 shadow-2xl transition-shadow"
-            >
-              <Download size={20} /> Download OneClick
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.1)" }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => window.location.href = '/docs'}
-              className="glass px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2"
-            >
-              <BookOpen size={20} /> View Documentation
-            </motion.button>
-          </div>
-
-        </motion.div>
-
-        {/* Right Side */}
+        {/* System Summary Line */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, x: 20 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
+          className="mt-12 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 px-6 py-3.5 rounded-full bg-white/[0.03] border border-white/[0.06] font-mono text-sm"
         >
-          <TerminalMock />
+          {systemSegments.map((seg, i) => (
+            <span key={i} className="flex items-center gap-3">
+              {i > 0 && (
+                <span className="text-white/15 hidden sm:inline">·</span>
+              )}
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: seg.delay, duration: 0.4 }}
+                className={
+                  seg.accent
+                    ? "flex items-center gap-2 text-green-400"
+                    : "text-white/50"
+                }
+              >
+                {seg.accent && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-glow-pulse" />
+                )}
+                {seg.label}
+              </motion.span>
+            </span>
+          ))}
         </motion.div>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.55 }}
+          className="mt-10 flex items-center justify-center gap-4 flex-wrap"
+        >
+          <a
+            href="https://github.com/redpersongpt/macOS-One-Click/releases"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white text-[#050505] font-medium rounded-lg text-sm hover:bg-white/90 transition-colors"
+          >
+            <Download size={16} />
+            Download
+          </a>
+          <a
+            href="https://github.com/redpersongpt/macOS-One-Click"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white/[0.06] border border-white/[0.08] font-medium rounded-lg text-sm text-white/70 hover:bg-white/[0.1] hover:text-white transition-colors"
+          >
+            GitHub
+          </a>
+        </motion.div>
+
+        {/* Trust line */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.85, duration: 0.6 }}
+          className="mt-8 text-xs text-white/25 tracking-wide"
+        >
+          Validates before writing to disk. Blocks invalid setups.
+        </motion.p>
       </div>
     </section>
   );

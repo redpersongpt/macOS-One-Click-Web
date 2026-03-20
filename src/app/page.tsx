@@ -1,49 +1,59 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
+import ProductProof from "@/components/ProductProof";
+import Trust from "@/components/Trust";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen selection:bg-primary/30">
-      {/* Background Layer */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-[#000000]" />
-        
-        {/* Animated Gradient Gradients */}
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-900/10 rounded-full blur-[120px] animate-pulse-slow" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-purple-900/10 rounded-full blur-[120px] animate-pulse-slow [animation-delay:2s]" />
-        
-        {/* Noise Filter Overlay */}
-        <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none" />
+    <main className="min-h-screen bg-[#050505]">
+      {/* Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[#050505]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-500/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute inset-0 bg-noise opacity-[0.02]" />
       </div>
 
-      <div className="relative z-10 h-full">
-        {/* Navigation spacer */}
-        <nav className="fixed top-0 left-0 right-0 z-50 p-6">
-          <div className="container mx-auto flex justify-between items-center glass px-6 py-4 rounded-2xl">
-             <div className="font-black tracking-tighter text-xl">macOS OneClick</div>
-              <div className="flex gap-8 text-sm font-bold text-white/50">
-                <a href="#" className="hover:text-white transition-colors">Platform</a>
-                <a href="https://github.com/redpersongpt/macOS-One-Click" className="hover:text-white transition-colors">GitHub</a>
-                <a href="/about" className="hover:text-white transition-colors">About Me</a>
-              </div>
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#050505] via-[#050505]/80 to-transparent">
+        <div className="container mx-auto px-6 py-5 flex justify-between items-center">
+          <Link
+            href="/"
+            className="font-semibold text-sm tracking-tight text-white/70 hover:text-white transition-colors"
+          >
+            macOS OneClick
+          </Link>
+          <div className="flex items-center gap-6 text-sm text-white/30">
+            <a
+              href="https://github.com/redpersongpt/macOS-One-Click"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white/60 transition-colors"
+            >
+              GitHub
+            </a>
+            <Link
+              href="/docs"
+              className="hover:text-white/60 transition-colors"
+            >
+              Docs
+            </Link>
+            <Link
+              href="/about"
+              className="hover:text-white/60 transition-colors"
+            >
+              About
+            </Link>
           </div>
-        </nav>
+        </div>
+      </nav>
 
+      <div className="relative z-10">
         <Hero />
         <Features />
-        
-        {/* Mission Section */}
-        <section className="py-20 text-center container mx-auto px-6">
-          <div className="glass p-12 rounded-[3rem] border-primary/5 bg-gradient-to-b from-primary/5 to-transparent">
-            <h2 className="text-4xl sm:text-5xl font-black mb-6 leading-tight">Built for reliable <br/> hardware exploration.</h2>
-            <p className="text-white/40 max-w-2xl mx-auto text-lg mb-0">
-              OneClick was built to make macOS deployment accessible and reliable. Join the most advanced deployment ecosystem.
-
-            </p>
-          </div>
-        </section>
-
+        <ProductProof />
+        <Trust />
         <Footer />
       </div>
     </main>
