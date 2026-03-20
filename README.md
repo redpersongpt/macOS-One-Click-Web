@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="https://github.com/redpersongpt/macOS-One-Click-Web/blob/main/legacy/src/assets/hero.png?raw=true" alt="macOS One-Click — Frontier Edition" width="100%">
+<img src="./image.png" alt="macOS One-Click" width="100%">
 
 <br/>
 
