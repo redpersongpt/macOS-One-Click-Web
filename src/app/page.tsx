@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
-import ProductProof from "@/components/ProductProof";
-import Trust from "@/components/Trust";
 import Footer from "@/components/Footer";
 import PageBackdrop from "@/components/PageBackdrop";
 import SiteHeader from "@/components/SiteHeader";
@@ -41,9 +39,7 @@ export default function Home() {
       />
       <main id="content" className="relative min-h-screen">
         <Hero />
-        <ProductProof />
         <Features />
-        <Trust />
         <Footer />
       </main>
     </>

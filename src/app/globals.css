@@ -8,7 +8,7 @@
   --line: rgba(255, 255, 255, 0.1);
   --panel: rgba(6, 9, 12, 0.82);
   --panel-strong: rgba(7, 10, 14, 0.94);
-  --accent: #7dd3fc;
+  --accent: #ffffff;
 }
 
 html {
@@ -19,7 +19,7 @@ body {
   min-height: 100vh;
   color: var(--foreground);
   background:
-    radial-gradient(circle at top, rgba(125, 211, 252, 0.12), transparent 30%),
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 28%),
     linear-gradient(180deg, var(--background) 0%, var(--background-deep) 45%, #020304 100%);
   overflow-x: hidden;
   font-family: var(--font-sans), sans-serif;
@@ -30,12 +30,12 @@ a {
 }
 
 :focus-visible {
-  outline: 2px solid rgba(119, 213, 255, 0.9);
+  outline: 2px solid rgba(255, 255, 255, 0.9);
   outline-offset: 3px;
 }
 
 ::selection {
-  background: rgba(119, 213, 255, 0.28);
+  background: rgba(255, 255, 255, 0.24);
   color: var(--foreground);
 }
 
@@ -51,7 +51,7 @@ a {
   top: 1rem;
   z-index: 100;
   transform: translateY(-160%);
-  border: 1px solid rgba(119, 213, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
   background: rgba(5, 9, 13, 0.96);
   color: var(--foreground);
@@ -75,7 +75,7 @@ a {
 .focus-ring:focus-visible {
   box-shadow:
     0 0 0 2px rgba(5, 9, 13, 0.95),
-    0 0 0 4px rgba(119, 213, 255, 0.42);
+    0 0 0 4px rgba(255, 255, 255, 0.3);
 }
 
 .backdrop-grid,
@@ -121,7 +121,7 @@ a {
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(119, 213, 255, 0.82);
+  color: rgba(255, 255, 255, 0.54);
 }
 
 .balance-text {

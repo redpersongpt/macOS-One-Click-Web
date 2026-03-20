@@ -26,18 +26,8 @@ const FEATURES = [
 
 export default function Features() {
   return (
-    <section id="flow" className="relative py-16 sm:py-20">
+    <section id="flow" className="relative pb-16 sm:pb-20">
       <div className="container mx-auto max-w-6xl px-6">
-        <div className="mb-8 max-w-xl">
-          <p className="eyebrow">Flow</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Three moves.
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-white/64 sm:text-base">
-            Short, sharp, and dark. That was the point.
-          </p>
-        </div>
-
         <div className="grid gap-4 md:grid-cols-3">
           {FEATURES.map((feature, index) => {
             const Icon = feature.icon;
@@ -52,7 +42,7 @@ export default function Features() {
                 className="surface-panel rounded-[1.6rem] p-6"
               >
                 <div className="flex items-center justify-between">
-                  <Icon className="text-[var(--accent)]" size={20} />
+                  <Icon className="text-white" size={20} />
                   <span className="font-mono text-[0.72rem] uppercase tracking-[0.22em] text-white/34">
                     {feature.step}
                   </span>

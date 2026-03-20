@@ -122,12 +122,12 @@ export default function InteractiveTerminal() {
 
   return (
     <div className="relative group">
-      <div className="overflow-hidden rounded-[1.6rem] border border-white/[0.08] bg-[#0a1016]/82 shadow-2xl shadow-black/40 backdrop-blur-xl">
+      <div className="overflow-hidden rounded-[1.6rem] border border-white/[0.08] bg-[#050505]/92 shadow-2xl shadow-black/40 backdrop-blur-xl">
         <div className="flex items-center border-b border-white/[0.06] px-4 py-2.5">
           <div className="flex gap-[7px]">
-            <div className="h-[11px] w-[11px] rounded-full bg-[#ff5f57]/80 transition-colors duration-300 group-hover:bg-[#ff5f57]" />
-            <div className="h-[11px] w-[11px] rounded-full bg-[#febc2e]/80 transition-colors duration-300 group-hover:bg-[#febc2e]" />
-            <div className="h-[11px] w-[11px] rounded-full bg-[#28c840]/80 transition-colors duration-300 group-hover:bg-[#28c840]" />
+            <div className="h-[11px] w-[11px] rounded-full bg-white/20 transition-colors duration-300 group-hover:bg-white/30" />
+            <div className="h-[11px] w-[11px] rounded-full bg-white/20 transition-colors duration-300 group-hover:bg-white/30" />
+            <div className="h-[11px] w-[11px] rounded-full bg-white/20 transition-colors duration-300 group-hover:bg-white/30" />
           </div>
           <span className="flex-1 select-none text-center font-mono text-[11px] uppercase tracking-[0.22em] text-white/22">
             oneclick flow
@@ -164,18 +164,18 @@ export default function InteractiveTerminal() {
               >
                 {line.type === "command" && (
                   <>
-                    <span className="select-none text-[var(--accent)]/75">❯ </span>
+                    <span className="select-none text-white/72">❯ </span>
                     <span className="text-white/82">{line.text}</span>
                   </>
                 )}
                 {line.type === "output" && (
                   <>
-                    <span className="select-none text-emerald-300/75">[✔]</span>
+                    <span className="select-none text-white/46">[✔]</span>
                     <span className="text-white/62">{line.text.slice(3)}</span>
                   </>
                 )}
                 {line.type === "verdict" && (
-                  <span className="font-medium text-emerald-300">
+                  <span className="font-medium text-white">
                     {line.text}
                   </span>
                 )}
@@ -185,7 +185,7 @@ export default function InteractiveTerminal() {
 
           {!done && (
             <div>
-              <span className="select-none text-[var(--accent)]/75">❯ </span>
+              <span className="select-none text-white/72">❯ </span>
               {typing !== null && <span className="text-white/82">{typing}</span>}
               <span
                 className={`ml-px inline-block h-[14px] w-[6.5px] align-middle transition-opacity duration-75 ${
@@ -201,7 +201,7 @@ export default function InteractiveTerminal() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <span className="select-none text-[var(--accent)]/75">❯ </span>
+              <span className="select-none text-white/72">❯ </span>
               <span
                 className={`ml-px inline-block h-[14px] w-[6.5px] align-middle transition-opacity duration-75 ${
                   cursor ? "bg-white/60" : "bg-transparent"
@@ -212,7 +212,7 @@ export default function InteractiveTerminal() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute -inset-6 -z-10 rounded-3xl bg-[var(--accent)]/[0.05] blur-2xl opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute -inset-6 -z-10 rounded-3xl bg-white/[0.03] blur-2xl opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
     </div>
   );
 }
