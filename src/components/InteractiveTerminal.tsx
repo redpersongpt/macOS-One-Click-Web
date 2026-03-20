@@ -14,21 +14,18 @@ interface Line {
 
 const STEPS: { type: LineType; text: string }[] = [
   { type: "command", text: "inspect --report" },
-  { type: "output", text: "[✔] Reading CPU, GPU, storage, audio, and network" },
-  { type: "output", text: "[✔] Checking compatibility signals and blockers" },
-  { type: "output", text: "[✔] Mapping the OpenCore path for review" },
+  { type: "output", text: "[✔] Reading hardware" },
+  { type: "output", text: "[✔] Checking blockers" },
   { type: "blank", text: "" },
   { type: "command", text: "build --plan" },
-  { type: "output", text: "[✔] Selecting the right configuration family" },
-  { type: "output", text: "[✔] Annotating kexts, patches, and quirks" },
-  { type: "output", text: "[✔] Preparing export notes before write" },
+  { type: "output", text: "[✔] Picking config family" },
+  { type: "output", text: "[✔] Adding kexts and patches" },
   { type: "blank", text: "" },
   { type: "command", text: "validate" },
-  { type: "output", text: "[✔] Checking required boot assets" },
-  { type: "output", text: "[✔] Running consistency and conflict checks" },
+  { type: "output", text: "[✔] Running final checks" },
   { type: "blank", text: "" },
   { type: "command", text: "verdict" },
-  { type: "verdict", text: "Supported path surfaced · Review before write" },
+  { type: "verdict", text: "Ready for review" },
 ];
 
 export default function InteractiveTerminal() {
@@ -122,8 +119,8 @@ export default function InteractiveTerminal() {
 
   return (
     <div className="relative group">
-      <div className="overflow-hidden rounded-[1.6rem] border border-white/[0.08] bg-[#050505]/92 shadow-2xl shadow-black/40 backdrop-blur-xl">
-        <div className="flex items-center border-b border-white/[0.06] px-4 py-2.5">
+      <div className="overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#050505]/92 shadow-2xl shadow-black/40 backdrop-blur-xl">
+        <div className="flex items-center border-b border-white/[0.06] px-3.5 py-2">
           <div className="flex gap-[7px]">
             <div className="h-[11px] w-[11px] rounded-full bg-[#ff5f57] transition-transform duration-300 group-hover:scale-105" />
             <div className="h-[11px] w-[11px] rounded-full bg-[#febc2e] transition-transform duration-300 group-hover:scale-105" />
@@ -148,7 +145,7 @@ export default function InteractiveTerminal() {
 
         <div
           ref={bodyRef}
-          className="scrollbar-hide min-h-[240px] max-h-[320px] overflow-y-auto p-4 font-mono text-[11px] leading-[1.7] sm:min-h-[280px] sm:p-5 sm:text-[12.5px]"
+          className="scrollbar-hide h-[210px] overflow-y-auto p-3.5 font-mono text-[10.5px] leading-[1.65] sm:h-[240px] sm:p-4 sm:text-[12px]"
         >
           {lines.map((line) => {
             if (line.type === "blank") {

@@ -30,20 +30,30 @@ const proofPills = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pb-14 pt-10 sm:pb-16 sm:pt-14">
-      <div className="container mx-auto grid max-w-6xl gap-8 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(300px,390px)] lg:items-center">
+      <div className="container mx-auto grid max-w-6xl gap-8 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(280px,360px)] lg:items-center">
         <div>
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5"
+          >
+            <span className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-black">
+              <BrandIcon className="h-4 w-4 text-white" />
+            </span>
+            <span className="font-mono text-[0.72rem] uppercase tracking-[0.2em] text-white/58">
+              macOS OneClick
+            </span>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-start gap-4"
           >
             <h1 className="balance-text max-w-3xl text-5xl font-semibold leading-[0.94] tracking-tight text-white sm:text-6xl lg:text-[4.7rem]">
-              macOS starts with the right EFI.
+              macOS needs the right EFI.
             </h1>
-            <span className="mt-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03] sm:h-12 sm:w-12">
-              <BrandIcon className="h-5 w-5 text-white sm:h-6 sm:w-6" />
-            </span>
           </motion.div>
 
           <motion.p
@@ -105,10 +115,10 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.96, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="relative lg:ml-auto lg:w-full lg:max-w-[390px]"
+          className="relative lg:ml-auto lg:w-full lg:max-w-[360px]"
         >
-          <div className="surface-panel-strong relative overflow-hidden rounded-[2rem] p-4 sm:p-5">
-            <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-[1.25rem] border border-white/8 bg-black/20 px-4 py-3">
+          <div className="surface-panel-strong relative overflow-hidden rounded-[1.8rem] p-3.5 sm:p-4">
+            <div className="mb-3 flex flex-wrap items-center justify-between gap-3 rounded-[1.1rem] border border-white/8 bg-black/20 px-3.5 py-2.5">
               <div>
                 <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-white/48">
                   Example flow
