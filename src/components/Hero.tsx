@@ -30,18 +30,21 @@ const proofPills = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pb-14 pt-10 sm:pb-16 sm:pt-14">
-      <div className="container mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(340px,440px)] lg:items-center">
+      <div className="container mx-auto grid max-w-6xl gap-8 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(300px,390px)] lg:items-center">
         <div>
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="balance-text max-w-3xl text-5xl font-semibold leading-[0.94] tracking-tight text-white sm:text-6xl lg:text-[5rem]"
+            className="flex items-start gap-4"
           >
-            macOS
-            <BrandIcon className="mx-3 inline h-[0.9em] w-[0.9em] align-[-0.08em] text-white" />
-            needs the right EFI.
-          </motion.h1>
+            <h1 className="balance-text max-w-3xl text-5xl font-semibold leading-[0.94] tracking-tight text-white sm:text-6xl lg:text-[4.7rem]">
+              macOS starts with the right EFI.
+            </h1>
+            <span className="mt-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03] sm:h-12 sm:w-12">
+              <BrandIcon className="h-5 w-5 text-white sm:h-6 sm:w-6" />
+            </span>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -102,7 +105,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.96, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="relative"
+          className="relative lg:ml-auto lg:w-full lg:max-w-[390px]"
         >
           <div className="surface-panel-strong relative overflow-hidden rounded-[2rem] p-4 sm:p-5">
             <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-[1.25rem] border border-white/8 bg-black/20 px-4 py-3">

@@ -148,7 +148,7 @@ export default function InteractiveTerminal() {
 
         <div
           ref={bodyRef}
-          className="scrollbar-hide min-h-[300px] max-h-[380px] overflow-y-auto p-4 font-mono text-[11.5px] leading-[1.75] sm:min-h-[340px] sm:p-5 sm:text-[13px]"
+          className="scrollbar-hide min-h-[240px] max-h-[320px] overflow-y-auto p-4 font-mono text-[11px] leading-[1.7] sm:min-h-[280px] sm:p-5 sm:text-[12.5px]"
         >
           {lines.map((line) => {
             if (line.type === "blank") {
