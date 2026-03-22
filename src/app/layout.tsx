@@ -19,13 +19,14 @@ const metadataBase = siteUrl ? new URL(siteUrl) : undefined;
 export const metadata: Metadata = {
   metadataBase,
   title: {
-    default: "macOS OneClick | EFI built for the hardware you actually have",
-    template: "%s | macOS OneClick",
+    default: "OpCore-OneClick | Review-first OpenCore planning",
+    template: "%s | OpCore-OneClick",
   },
   description:
-    "Audit your PC hardware, generate a validated OpenCore plan, and review every kext, patch, and risk gate before anything writes to disk.",
-  applicationName: "macOS OneClick",
+    "OpCore-OneClick audits PC hardware, builds a review-first OpenCore plan, and keeps every kext, patch, and risk gate visible before anything writes to disk.",
+  applicationName: "OpCore-OneClick",
   keywords: [
+    "OpCore-OneClick",
     "OpenCore",
     "Hackintosh",
     "macOS installer",
@@ -38,20 +39,37 @@ export const metadata: Metadata = {
   category: "technology",
   ...(metadataBase ? { alternates: { canonical: "/" } } : {}),
   openGraph: {
-    title: "macOS OneClick",
+    title: "OpCore-OneClick",
     description:
-      "Generate an OpenCore deployment plan that explains itself before anything touches your disk.",
-    siteName: "macOS OneClick",
+      "Review hardware, build an OpenCore plan, and verify blockers before any EFI work starts.",
+    siteName: "OpCore-OneClick",
     locale: "en_US",
     type: "website",
-    ...(metadataBase ? { url: "/" } : {}),
+    ...(metadataBase
+      ? {
+          url: "/",
+          images: [
+            {
+              url: "/opcore-oneclick-social.png",
+              width: 1200,
+              height: 630,
+              alt: "OpCore-OneClick social preview card",
+            },
+          ],
+        }
+      : {}),
   },
   twitter: {
     card: "summary_large_image",
     creator: "@redpersongpt",
-    title: "macOS OneClick",
+    title: "OpCore-OneClick",
     description:
-      "Hardware-aware OpenCore planning with validation, reports, and explicit risk gates.",
+      "Hardware-aware OpenCore planning with validation, readable reports, and explicit risk gates.",
+    ...(metadataBase
+      ? {
+          images: ["/opcore-oneclick-social.png"],
+        }
+      : {}),
   },
   robots: {
     index: true,

@@ -127,7 +127,7 @@ export default function InteractiveTerminal() {
             <div className="h-[11px] w-[11px] rounded-full bg-[#28c840] transition-transform duration-300 group-hover:scale-105" />
           </div>
           <span className="flex-1 select-none text-center font-mono text-[11px] uppercase tracking-[0.22em] text-white/22">
-            oneclick flow
+            opcore-oneclick flow
           </span>
           {done && (
             <motion.button

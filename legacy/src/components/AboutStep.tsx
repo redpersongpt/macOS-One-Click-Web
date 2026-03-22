@@ -27,7 +27,7 @@ export default function AboutStep({ onBack }: Props) {
           <ArrowLeft size={20} />
         </button>
         <div style={{ textAlign: 'left' }}>
-          <h2 style={{ fontSize: '3rem', fontWeight: 900, color: 'white', letterSpacing: '-0.04em' }}>About Me</h2>
+          <h2 style={{ fontSize: '3rem', fontWeight: 900, color: 'white', letterSpacing: '-0.04em' }}>About OpCore-OneClick</h2>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '1.1rem', fontWeight: 600, marginTop: '0.25rem' }}>By Red Person</p>
         </div>
       </div>
@@ -48,15 +48,15 @@ export default function AboutStep({ onBack }: Props) {
             <div style={{ padding: '0.75rem', borderRadius: '1rem', backgroundColor: 'rgba(0, 102, 204, 0.1)', border: '1px solid rgba(0, 102, 204, 0.2)' }}>
               <User size={24} color="#0066cc" />
             </div>
-            <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'white', fontStyle: 'italic' }}>waddup gang</h3>
+            <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'white', fontStyle: 'italic' }}>Why it exists</h3>
           </div>
           
           <p style={{ fontSize: '1.4rem', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.6, fontWeight: 500 }}>
-            "I'm a system trainee working in IT. I don't claim to be a senior architect or a tech mogul. I'm just someone who found themselves fascinated by the bridge between hardware and software."
+            "I work in IT and built this because the manual OpenCore path was too easy to waste time on and too easy to get wrong."
           </p>
 
           <p style={{ fontSize: '1.1rem', color: 'rgba(255, 255, 255, 0.5)', lineHeight: 1.7 }}>
-            This project started as a personal challenge to automate what was once a grueling manual process. It grew into a community tool designed to empower users with the same curiosity—to help them understand their hardware and deploy macOS with confidence, not just one click.
+            OpCore-OneClick started as a personal tool to turn hardware checks, OpenCore decisions, and install prep into something easier to review. The point is not magic. The point is clarity before you touch a disk.
           </p>
 
           <div style={{ display: 'flex', gap: '1rem', paddingTop: '1.5rem' }}>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const STEPS = [
-  { text: "$ OneClick deploy", delay: 0 },
+  { text: "$ OpCore-OneClick deploy", delay: 0 },
   { text: "✔ Detecting hardware", delay: 1 },
   { text: "✔ Generating OpenCore config", delay: 2 },
   { text: "✔ Patching kernel extensions", delay: 3 },

@@ -1,7 +1,7 @@
 {
   "$schema": "https://context7.com/schema/context7.json",
-  "projectTitle": "macOS OneClick Web",
-  "description": "Marketing site for macOS OneClick, a review-first OpenCore planning and deployment utility.",
+  "projectTitle": "OpCore-OneClick Web",
+  "description": "Marketing site for OpCore-OneClick, a review-first OpenCore planning and deployment utility.",
   "folders": [
     "src/app",
     "src/components",

@@ -89,11 +89,11 @@ export default function App() {
             </motion.div>
             
             <h1 style={{ fontSize: '5.5rem', fontWeight: 900, letterSpacing: '-0.05em', marginBottom: '1.5rem', color: 'white', lineHeight: 0.9 }}>
-              macOS <br/> OneClick
+              OpCore-<br/>OneClick
             </h1>
             
             <p style={{ fontSize: '1.25rem', color: 'rgba(255, 255, 255, 0.5)', marginBottom: '3rem', lineHeight: 1.625, fontWeight: 500, maxWidth: '32rem' }}>
-              The professional choice for macOS deployment. Engineered for experts, refined by the community.
+              Review-first OpenCore planning for PC hardware. Scan the machine, inspect the risks, and keep the EFI path readable.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', width: '100%' }}>
@@ -118,7 +118,7 @@ export default function App() {
                 }}
               >
                 <Download style={{ width: '2rem', height: '2rem' }} />
-                <span>Download App</span>
+                <span>Download build</span>
               </button>
               
               <button 

@@ -7,7 +7,7 @@ import SiteHeader from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "Docs",
   description:
-    "Quick notes and hard boundaries for macOS OneClick.",
+    "Quick install notes and hard boundaries for OpCore-OneClick.",
   alternates: {
     canonical: "/docs",
   },
@@ -38,11 +38,11 @@ export default function DocsPage() {
           <div className="mx-auto max-w-3xl">
             <p className="eyebrow">Documentation</p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-              Quick notes.
+              Install notes.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
-              Know what you need. Know what can fail. Stop when the hardware
-              path is wrong.
+              OpCore-OneClick stays review-first. Know what you need, know what
+              can fail, and stop when the hardware path is wrong.
             </p>
 
             <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -74,7 +74,8 @@ export default function DocsPage() {
                 Next step
               </h2>
               <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/68">
-                If the docs do not match your machine, do not force it.
+                If OpCore-OneClick does not line up with your machine, do not
+                force the install path.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link

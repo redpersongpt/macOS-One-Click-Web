@@ -8,7 +8,7 @@ import SiteHeader from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Built by one developer. Short notes on why macOS OneClick exists.",
+    "Built by one developer. Short notes on why OpCore-OneClick exists.",
   alternates: {
     canonical: "/about",
   },
@@ -30,7 +30,7 @@ export default function AboutPage() {
               Built by one person.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
-              I made macOS OneClick because the manual path was slow, messy,
+              I built OpCore-OneClick because the manual path was slow, messy,
               and too easy to screw up. The goal is simple: scan the machine,
               show the risks, and keep the output readable.
             </p>

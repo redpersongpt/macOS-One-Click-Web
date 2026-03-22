@@ -1,8 +1,8 @@
-# macOS One-Click
+# OpCore-OneClick
 
 <div align="center">
 
-<img src="./image.png" alt="macOS One-Click" width="100%">
+<img src="./public/opcore-oneclick-preview.svg" alt="OpCore-OneClick preview card" width="100%">
 
 <br/>
 
@@ -25,9 +25,9 @@
 
 ---
 
-> **Advanced macOS deployment utility for PC hardware. Professional performance through simplified engineering.**
+> **Review-first OpenCore planning for PC hardware.**
 
-macOS One-Click automates the Hackintosh setup process by analyzing system hardware and fetching compatible OpenCore components. It retrieves resources directly from Apple servers and handles complex firmware configurations with persistent progress tracking.
+OpCore-OneClick audits PC hardware, builds an OpenCore plan, and keeps the output readable before you commit to an install path. It is designed to surface blockers early, document the chosen config, and keep risky steps explicit.
 
 ## Overview
 
@@ -37,6 +37,10 @@ macOS One-Click automates the Hackintosh setup process by analyzing system hardw
 | Direct Recovery | Direct streaming from official Apple infrastructure |
 | Persistence | Download resumption across system restarts |
 | Deployment | Installation to USB media or internal boot partitions |
+
+## Branding note
+
+The GitHub repository slug and release URLs still use `macOS-One-Click`. Those links are left intact so downloads, stars, forks, and release history keep working during the rebrand.
 
 ## Security
 

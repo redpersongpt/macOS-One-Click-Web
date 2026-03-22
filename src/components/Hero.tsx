@@ -42,7 +42,7 @@ export default function Hero() {
               <BrandIcon className="h-4 w-4 text-white" />
             </span>
             <span className="font-mono text-[0.72rem] uppercase tracking-[0.2em] text-white/58">
-              macOS OneClick
+              OpCore-OneClick
             </span>
           </motion.div>
 
@@ -52,7 +52,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="balance-text max-w-3xl text-5xl font-semibold leading-[0.94] tracking-tight text-white sm:text-6xl lg:text-[4.7rem]">
-              macOS needs the right EFI.
+              OpCore-OneClick plans the EFI before you write.
             </h1>
           </motion.div>
 
@@ -62,7 +62,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-5 max-w-md text-base leading-relaxed text-white/68 sm:text-lg"
           >
-            Scan. Build. Validate. No fake specs.
+            Scan the hardware. Build the plan. Review the risks before any disk write.
           </motion.p>
 
           <motion.div
@@ -105,7 +105,7 @@ export default function Hero() {
               href="/docs"
               className="focus-ring inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-white/[0.03] px-6 py-3 text-sm font-medium text-white hover:bg-white/[0.06]"
             >
-              Read setup docs
+              Read install docs
               <ArrowRight size={16} />
             </Link>
           </motion.div>
@@ -124,7 +124,7 @@ export default function Hero() {
                   Example flow
                 </p>
                 <p className="mt-1 text-sm text-white/64">
-                  Sample output. Not your phone. Not fake live specs.
+                  Sample output. Not your machine. Not fake live specs.
                 </p>
               </div>
               <div className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 font-mono text-[0.68rem] uppercase tracking-[0.2em] text-white/58">

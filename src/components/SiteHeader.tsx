@@ -22,7 +22,7 @@ export default function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
           <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
             <BrandIcon className="h-4 w-4 text-white" />
           </span>
-          <span className="text-sm font-medium tracking-tight">macOS OneClick</span>
+          <span className="text-sm font-medium tracking-tight">OpCore-OneClick</span>
         </Link>
 
         <div className="flex items-center gap-2 sm:gap-3">
@@ -56,7 +56,7 @@ export default function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
             rel="noopener noreferrer"
             className="focus-ring inline-flex items-center rounded-full border border-white/16 bg-white px-4 py-2 text-sm font-medium text-black hover:bg-white/90"
           >
-            Latest build
+            Download
           </a>
         </div>
       </div>

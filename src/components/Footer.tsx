@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <span className="flex items-center gap-2 text-sm text-white/55">
             <BrandIcon className="h-3.5 w-3.5 text-white" />
-            macOS OneClick
+            OpCore-OneClick
           </span>
           <nav
             aria-label="Footer"

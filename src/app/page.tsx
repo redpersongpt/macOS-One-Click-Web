@@ -8,13 +8,13 @@ import SiteHeader from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "Overview",
   description:
-    "Review-first OpenCore planning for PC hardware, with validation, example reports, and explicit compatibility gates.",
+    "OpCore-OneClick gives PC hardware a review-first OpenCore plan with validation, sample reports, and explicit compatibility gates.",
 };
 
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "macOS OneClick",
+  name: "OpCore-OneClick",
   applicationCategory: "DeveloperApplication",
   operatingSystem: "Windows, Linux",
   description:
