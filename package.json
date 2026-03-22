@@ -1,0 +1,36 @@
+{
+  "name": "macos-frontier-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build:cf": "opennextjs-cloudflare build",
+    "deploy": "npm run build:cf && npx wrangler deploy"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "clsx": "latest",
+    "framer-motion": "^12.37.0",
+    "lucide-react": "^0.577.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwind-merge": "latest"
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "^1.17.1",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest",
+    "wrangler": "^4.74.0"
+  }
+}

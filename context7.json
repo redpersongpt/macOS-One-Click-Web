@@ -1,0 +1,23 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "OpCore-OneClick Web",
+  "description": "Marketing site for OpCore-OneClick, a review-first OpenCore planning and deployment utility.",
+  "folders": [
+    "src/app",
+    "src/components",
+    "public"
+  ],
+  "excludeFolders": [
+    "node_modules",
+    ".next",
+    "legacy"
+  ],
+  "excludeFiles": [
+    "package-lock.json"
+  ],
+  "rules": [
+    "Keep the landing page honest: avoid fake live hardware readouts and mark example reports as illustrative.",
+    "Prefer server-rendered routes unless client-side animation is materially necessary.",
+    "Treat compatibility and deployment copy as review-first safety guidance, not blanket promises."
+  ]
+}

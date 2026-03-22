@@ -1,0 +1,43 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" rx="0" fill="#030303"/>
+  <rect x="30" y="30" width="1140" height="570" rx="28" fill="url(#panel)" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <circle cx="610" cy="304" r="210" fill="url(#glow)" fill-opacity="0.34"/>
+  <rect x="72" y="82" width="334" height="62" rx="31" fill="#0D0D0E" stroke="#FFFFFF" stroke-opacity="0.1"/>
+  <circle cx="117" cy="113" r="20" fill="#050505" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <path d="M127.149 108.63C127.14 102.437 132.318 99.4951 132.562 99.3502C129.601 95.1419 125.018 94.5707 123.394 94.5056C119.514 94.1218 115.821 96.736 113.858 96.736C111.893 96.736 108.849 94.5608 105.603 94.6151C101.344 94.673 97.5079 97.0123 95.3205 100.721C90.9025 108.186 94.202 119.441 98.4952 125.491C100.596 128.438 103.112 131.761 106.359 131.638C109.519 131.522 110.723 129.64 114.54 129.64C118.356 129.64 119.472 131.638 122.878 131.576C126.284 131.522 128.421 128.591 130.503 125.605C132.905 122.158 133.899 118.827 133.953 118.649C133.867 118.617 127.227 116.047 127.149 108.63Z" fill="white"/>
+  <path d="M119.962 88.9217C121.876 86.6423 122.992 84.0757 122.777 81.5508C120.352 81.656 117.395 83.1356 115.581 85.2484C113.954 87.1236 112.548 89.7782 112.909 92.2265C115.603 92.4373 118.276 90.8914 119.962 88.9217Z" fill="white"/>
+  <text x="155" y="122" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">OpCore-OneClick</text>
+  <text x="72" y="214" fill="#F6F4EF" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="700">Review-first</text>
+  <text x="72" y="290" fill="#F6F4EF" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="700">OpenCore plans</text>
+  <text x="72" y="366" fill="#F6F4EF" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="700">for real hardware</text>
+  <text x="74" y="430" fill="#FFFFFF" fill-opacity="0.62" font-family="Arial, Helvetica, sans-serif" font-size="24">Scan hardware. Build the plan. Review blockers first.</text>
+  <rect x="72" y="498" width="214" height="60" rx="30" fill="#F5F3EE"/>
+  <text x="110" y="536" fill="#050505" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Latest build</text>
+  <rect x="302" y="498" width="214" height="60" rx="30" fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <text x="357" y="536" fill="#F5F3EE" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600">Install docs</text>
+  <rect x="738" y="142" width="360" height="346" rx="28" fill="#12151C" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="768" y="172" width="300" height="92" rx="20" fill="#0A0C10" stroke="#FFFFFF" stroke-opacity="0.06"/>
+  <text x="792" y="205" fill="#FFFFFF" fill-opacity="0.34" font-family="Courier New, monospace" font-size="17" letter-spacing="5">EXAMPLE FLOW</text>
+  <text x="792" y="242" fill="#FFFFFF" fill-opacity="0.68" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600">Sample output. Review-first by design.</text>
+  <rect x="792" y="290" width="252" height="156" rx="20" fill="#070809" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <circle cx="820" cy="314" r="6" fill="#FF5F57"/>
+  <circle cx="841" cy="314" r="6" fill="#FEBC2E"/>
+  <circle cx="862" cy="314" r="6" fill="#28C840"/>
+  <text x="903" y="319" fill="#FFFFFF" fill-opacity="0.2" font-family="Courier New, monospace" font-size="12" letter-spacing="3">OPCORE-ONECLICK FLOW</text>
+  <text x="818" y="356" fill="#FFFFFF" fill-opacity="0.82" font-family="Courier New, monospace" font-size="16" font-weight="700">❯ inspect --report</text>
+  <text x="818" y="388" fill="#FFFFFF" fill-opacity="0.58" font-family="Courier New, monospace" font-size="15">[✔] Reading hardware</text>
+  <text x="818" y="416" fill="#FFFFFF" fill-opacity="0.58" font-family="Courier New, monospace" font-size="15">[✔] Checking blockers</text>
+  <text x="818" y="460" fill="#FFFFFF" fill-opacity="0.82" font-family="Courier New, monospace" font-size="16" font-weight="700">❯ build --plan</text>
+  <text x="818" y="492" fill="#FFFFFF" fill-opacity="0.58" font-family="Courier New, monospace" font-size="15">[✔] Picking config family</text>
+  <text x="818" y="526" fill="#F5F3EE" font-family="Courier New, monospace" font-size="15" font-weight="700">Ready for review</text>
+  <defs>
+    <linearGradient id="panel" x1="600" y1="30" x2="600" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0A0C"/>
+      <stop offset="1" stop-color="#050505"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(610 304) rotate(90) scale(210)">
+      <stop stop-color="#6F5AFF"/>
+      <stop offset="1" stop-color="#6F5AFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
