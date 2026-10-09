@@ -33,3 +33,20 @@ dist-ssr/
 *.sln
 *.sw?
 node_modules
+
+# Secrets, signing material and build caches. Keep real values in a password
+# manager or CI secrets. Example env files stay tracked. The Next.js .next/
+# cache holds Server Action and preview keys.
+.env
+.env.*
+*.p8
+*.p12
+*.pem
+*.mobileprovision
+*.jks
+*.keystore
+credentials
+credentials.json
+service-account*.json
+!.env.example
+!.env.*.example
